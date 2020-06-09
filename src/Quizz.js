@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import Question from './Question';
 import "./Quizz.css";
+import ListQuestions from "./ListQuestions";
+
 
 class Quizz extends Component {
     state = { 
@@ -12,16 +13,13 @@ class Quizz extends Component {
         ]
      }
     render() { 
-        const listQuestions = this.state.questions.map(question => {
-            return  <Question title={question.title}/>
-
-        });
 
         return ( 
             <div className="quizz">
                 <h1 className="quizz__title">Fancy Quizz App</h1>
                 <div className="quizz__content">
-                    {listQuestions}
+                    <ListQuestions questions={this.state.questions}/>
+
                 </div>
             </div>
          );
